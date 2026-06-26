@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <!-- viewport: faz o site funcionar bem em celulares -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Agenda de Contatos</title>
+ <!-- Importa o arquivo de estilos CSS -->
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <!-- Cabecalho da pagina -->
+ <header>
+ <h1>Agenda de Contatos</h1>
+ <p>Gerencie seus contatos de forma simples</p>
+ </header>
+ <main>
+ <!-- FORMULARIO: usado tanto para criar quanto para editar -->
+ <!-- id='form-contato' permite o JavaScript encontrar este elemento -->
+ <section class="formulario">
+ <h2 id="titulo-form">Novo Contato</h2>
+ <!-- Campo oculto: guarda o ID quando estamos editando -->
+ <!-- Se estiver vazio, estamos criando; se tiver valor, editando -->
+ <input type="hidden" id="contato-id"> 
+ <div class="campo">
+ <label for="nome">Nome *</label>
+ <!-- required: o navegador exige que o campo seja preenchido -->
+ <input type="text" id="nome" placeholder="Ex: Joao Silva" 
+required>
+ </div>
+ <div class="campo">
+ <label for="email">Email *</label>
+ <!-- type='email': o navegador valida o formato do email -->
+ <input type="email" id="email" placeholder="joao@email.com" 
+required>
+ </div>
+ <div class="campo">
+ <label for="telefone">Telefone</label>
+ <input type="tel" id="telefone" placeholder="(11) 99999-9999">
+ </div>
+ <div class="botoes-form">
+ <!-- onclick='salvarContato()': chama funcao no JavaScript ao 
+clicar -->
+ <button onclick="salvarContato()" class="btn-salvar">
+ Salvar
+ </button>
+ <button onclick="limparFormulario()" class="btn-cancelar">
+ Cancelar
+ </button>
+ </div>
+ </section>
+ <!-- LISTA: onde os contatos aparecerao -->
+ <section class="lista">
+ <h2>Contatos Salvos</h2>
+ <!-- Barra de busca -->
+ <input type="text" id="busca
+  placeholder="Buscar por nome ou email..."
+ oninput="filtrarContatos()">
+ <!-- Esta div sera preenchida pelo JavaScript -->
+ <div id="lista-contatos">
+ <!-- Os contatos aparecem aqui dinamicamente -->
+ <p class="carregando">Carregando contatos...</p>
+ </div>
+ </section>
+ </main>
+ <!-- Importa o arquivo JavaScript no final do body -->
+ <!-- Colocar aqui garante que o HTML ja foi carregado -->
+ <script src="script.js"></script>
+</body>
+</html

@@ -1,0 +1,144 @@
+/* Reset: remove estilos padrao do navegador para ter controle total */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box; /* inclui padding na largura do elemento */
+}
+/* Estilo base da pagina */
+body {
+ font-family: 'Segoe UI', Tahoma, sans-serif;
+ background-color: #f0f2f5; /* fundo cinza claro */
+ color: #333333;
+ min-height: 100vh; /* pelo menos 100% da altura da tela */
+}
+/* Cabecalho */
+header {
+ background: linear-gradient(135deg, #2E75B6, #1F497D);
+ color: white;
+ padding: 24px 32px;
+ text-align: center;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+header h1 { font-size: 28px; margin-bottom: 4px; }
+header p { font-size: 14px; opacity: 0.85; }
+/* Conteudo principal: layout de duas colunas */
+main {
+ display: grid;
+ /* duas colunas: 380px fixa + resto do espaco */
+ grid-template-columns: 380px 1fr;
+ gap: 24px;
+ max-width: 1100px;
+ margin: 24px auto;
+ padding: 0 16px;
+}
+/* Secao do formulario */
+.formulario {
+ background: white;
+ border-radius: 8px;
+ padding: 24px;
+ box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+ height: fit-content; /* altura se ajusta ao conteudo */
+}
+.formulario h2 {
+ color: #2E75B6;
+ margin-bottom: 20px;
+ font-size: 20px;
+ border-bottom: 2px solid #EBF3FB;
+ padding-bottom: 12px;
+}
+/* Cada campo do formulario */
+.campo {
+ margin-bottom: 16px;
+}
+.campo label {
+ display: block; /* ocupa a linha toda */
+ font-size: 13px;
+ font-weight: 600;
+ margin-bottom: 6px;
+ color: #555;
+}
+.campo input {
+ width: 100%;
+ padding: 10px 12px;
+ border: 1px solid #DDD;
+ border-radius: 6px;
+ font-size: 14px;
+ transition: border-color 0.2s; /* animacao suave ao focar */
+}
+/* Estilo quando o input esta com foco */
+.campo input:focus {
+ outline: none;
+ border-color: #2E75B6;
+ box-shadow: 0 0 0 3px rgba(46,117,182,0.15);
+}
+/* Botoes do formulario */
+.botoes-form {
+ display: flex;
+ gap: 10px;
+ margin-top: 8px;
+}
+/* Estilo base para todos os botoes */
+button {
+ padding: 10px 20px;
+ border: none;
+ border-radius: 6px;
+ cursor: pointer;
+ font-size: 14px;
+ font-weight: 600;
+ transition: transform 0.1s, opacity 0.2s;
+}
+button:hover { opacity: 0.88; }
+button:active { transform: scale(0.97); }
+.btn-salvar { background: #2E75B6; color: white; flex: 1; }
+.btn-cancelar { background: #E0E0E0; color: #555; }
+.btn-editar { background: #F0AD4E; color: white; padding: 6px 12px; }
+.btn-deletar { background: #D9534F; color: white; padding: 6px 12px; }
+/* Secao da lista de contatos */
+.lista {
+ background: white;
+ border-radius: 8px;
+ padding: 24px;
+ box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+.lista h2 {
+ color: #2E75B6;
+ margin-bottom: 16px;
+ font-size: 20px;
+}
+/* Campo de busca */
+#busca {
+ width: 100%;
+ padding: 10px 12px;
+ border: 1px solid #DDD;
+ border-radius: 6px;
+ font-size: 14px;
+ margin-bottom: 16px;
+}
+/* Card de cada contato */
+.contato-card {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 14px 16px;
+ border: 1px solid #EEE;
+ border-radius: 6px;
+ margin-bottom: 10px;
+ transition: box-shadow 0.2s;
+}
+.contato-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.contato-info h3 { font-size: 15px; color: #333; }
+.contato-info p { font-size: 13px; color: #777; margin-top: 2px; }
+.contato-acoes { display: flex; gap: 8px; }
+/* Mensagem quando nao ha contatos */
+.sem-contatos {
+ text-align: center;
+ color: #AAA;
+ padding: 40px;
+ font-size: 15px;
+}
+/* Responsividade: em telas menores, empilha as colunas */
+@media (max-width: 768px) {
+ main {
+ grid-template-columns: 1fr; /* uma coluna */
+ }
+}
