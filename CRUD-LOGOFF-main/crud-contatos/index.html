@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Contatos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-conteudo">
+            <div class="logo-area">
+                <h1>Agenda de Contatos</h1>
+                <p>Gerencie seus contatos de forma simples</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="formulario">
+            <h2 id="titulo-form">Novo Contato</h2>
+            <input type="hidden" id="contato-id">
+            
+            <div class="campo">
+                <label for="nome">Nome *</label>
+                <input type="text" id="nome" placeholder="Ex: João Silva" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">Email *</label>
+                <input type="email" id="email" placeholder="joao@email.com" required>
+            </div>
+
+            <div class="campo">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" placeholder="(11) 99999-9999">
+            </div>
+
+            <div class="botoes-form">
+                <button onclick="salvarContato()" class="btn-salvar">Salvar</button>
+                <button onclick="limparFormulario()" class="btn-cancelar">Cancelar</button>
+            </div>
+
+            <div class="separador"></div>
+
+            <button onclick="fazerLogoff()" class="btn-sair-longo">Sair da Conta</button>
+        </section>
+
+        <section class="lista">
+            <h2>Contatos Salvos</h2>
+            <input type="text" id="busca" placeholder="Buscar por nome ou email..." oninput="filtrarContatos()">
+
+            <div id="lista-contatos">
+                <p class="carregando">Carregando contatos...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
